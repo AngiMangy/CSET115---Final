@@ -8,3 +8,18 @@ const tieScoreDisplay = document.getElementById("tieScoreDisplay");
 let player1Score = 0;
 let Player2Score = 0;
 let tieScore = 0;
+
+function playGame(){
+
+}
+function pressX(){
+
+}
+
+function pressO(){
+
+}
+
+function winnerX(){
+    
+}
