@@ -8,3 +8,26 @@ const tieScoreDisplay = document.getElementById("tieScoreDisplay");
 let player1Score = 0;
 let Player2Score = 0;
 let tieScore = 0;
+
+player1Display.textContent = `Player 1: ${player1Choice}`;
+player2Display.textContent = `Player 2: ${player2Choice}`;
+resultDisplay.textContent = result;
+
+resultDisplay.classList.remove("greenText", "redText");
+
+switch (result) {
+    case "You Win!":
+        resultDisplay.classList.add("greenText");
+        player1Score++;
+        player1ScoreDisplay.textContent = player1Score;
+        break;
+    case "You Lose!":
+        resultDisplay.classList.add("redText");
+        player2Score++;
+        player2ScoreDisplay.textContent = player2Score;
+        break;
+    case "TIE!":
+        tieScore++;
+        tieScoreDisplay.textContent = tieScore;
+        break;
+}
