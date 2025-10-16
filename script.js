@@ -1,4 +1,5 @@
 const choices = ["X", "O",];
+let currentPlayer = player[0]
 const player1Display = document.getElementById("player1Display");
 const Player2Display = document.getElementById("player2Display");
 const resultDisplay = document.getElementById("resultDisplay");
@@ -9,12 +10,31 @@ let player1Score = 0;
 let Player2Score = 0;
 let tieScore = 0;
 
+const winningCombo = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+]
 
+function winCheck(currentPlayer){
+    for(i = 0, i < winningCombo.length, i++){
+        const [a, b, c] = winningCombo[i];
+        if(square[a].textContent === currentPlayer && square[b].textContent === currentPlayer && square[c].textContent === currentPlayer){
+            return true
+        }
+    }
+    return false
+}
 function playGame(){
-
+    
 }
 function pressX(){
-
+    
 }
 
 function pressO(){
