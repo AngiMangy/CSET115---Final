@@ -1,9 +1,9 @@
 let turn = 1
 const player = ["X", "O",];
-let currentPlayer = player[0,1]
+let currentPlayer = player[0, 1]
 let square = document.getElementsByClassName("square")
 const player1Display = document.getElementById("player1Display");
-const Player2Display = document.getElementById("player2Display");
+const player2Display = document.getElementById("player2Display");
 const resultDisplay = document.getElementById("resultDisplay");
 const player1ScoreDisplay = document.getElementById("player1ScoreDisplay");
 const Player2ScoreDisplay = document.getElementById("Player2ScoreDisplay");
@@ -29,20 +29,28 @@ function winCheck(currentPlayer) {
         if (square[a].textContent === currentPlayer && square[b].textContent === currentPlayer && square[c].textContent === currentPlayer) {
             return true
         }
+
     }
     return false
 }
 function playGame(btnPressed) {
-    if (turn % 2 === 0) {
+    if (winCheck(currentPlayer) === true) {
+
+        let winner = document.createElement('h2')
+        winner.innerText = `${currentPlayer} Wins!`
+        document.getElementsByClassName('roundWinner').appenChild(winner)
+    }
+    else if (turn % 2 === 0) {
         pressX(btnPressed);
         console.log("in the if");
         turn++
         btnPressed.disabled = true
         if (turn >= 10) {
-        console.log("_____ wins!");
-        winCheck(currentPlayer)
-        console.log(winCheck(currentPlayer))
+            console.log("_____ wins!");
+            winCheck(currentPlayer)
+            console.log(winCheck(currentPlayer))
         }
+
     }
     else if (turn % 2 !== 0) {
         pressO(btnPressed);
@@ -50,16 +58,13 @@ function playGame(btnPressed) {
         turn++;
         btnPressed.disabled = true
         if (turn >= 10) {
-        console.log("_____ wins!");
-        winCheck(currentPlayer)
-        console.log(winCheck(currentPlayer))
-        
+            console.log("_____ wins!");
+            winCheck(currentPlayer)
+            console.log(winCheck(currentPlayer))
+        }
 
     }
-    }
-    // else if (turn >= 3) {
-    //     console.log("_____ wins!");
-    // }
+
     console.log(winCheck(currentPlayer))
     winCheck(currentPlayer)
 }
@@ -72,29 +77,6 @@ function pressO(btnPressed) {
     btnPressed.innerText = "O"
 }
 
-function winnerX() {
-
-}
 
 player1Display.textContent = `Player 1: O`;
 player2Display.textContent = `Player 2: X`;
-resultDisplay.textContent = result;
-
-resultDisplay.classList.remove("greenText", "redText");
-
-switch (result) {
-    case "You Win!":
-        resultDisplay.classList.add("greenText");
-        player1Score++;
-        player1ScoreDisplay.textContent = player1Score;
-        break;
-    case "You Lose!":
-        resultDisplay.classList.add("redText");
-        player2Score++;
-        player2ScoreDisplay.textContent = player2Score;
-        break;
-    case "TIE!":
-        tieScore++;
-        tieScoreDisplay.textContent = tieScore;
-        break;
-}
