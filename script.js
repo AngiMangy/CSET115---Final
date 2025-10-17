@@ -37,11 +37,14 @@ function playGame(btnPressed) {
         pressX(btnPressed);
         console.log("in the if");
         turn++
+        btnPressed.disabled = true
+
     }
     else if (turn % 2 !== 0) {
         pressO(btnPressed);
         console.log("in the else if");
         turn++;
+        btnPressed.disabled = true
     }
     else if (turn >= 10) {
         console.log("_____ wins!");
