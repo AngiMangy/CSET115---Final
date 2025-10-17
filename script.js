@@ -1,3 +1,4 @@
+let turn = 1
 const choices = ["X", "O",];
 let currentPlayer = player[0]
 const player1Display = document.getElementById("player1Display");
@@ -30,15 +31,29 @@ function winCheck(currentPlayer){
     }
     return false
 }
+
 function playGame(btnPressed){
-     btnPressed.innerHTML = "<p>X</p>"
+     if(turn % 2 === 0){
+        pressX(btnPressed);
+        console.log("in the if");
+        turn++
+     }
+     else if (turn % 2 !== 0){
+        pressO(btnPressed);
+        console.log("in the else if");
+        turn++;
+     }
+     else if (turn >= 10){
+        console.log("_____ wins!");
+     }
+
 }
-function pressX(){
-    
+function pressX(btnPressed){
+    btnPressed.innerHTML = "<p>X</p>"
 }
 
-function pressO(){
-
+function pressO(btnPressed){
+    btnPressed.innerHTML = "<p>O</p>"
 }
 
 function winnerX(){
