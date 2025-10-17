@@ -1,5 +1,5 @@
 const choices = ["X", "O",];
-let currentPlayer = player[0]
+let currentPlayer = player[0];
 const player1Display = document.getElementById("player1Display");
 const Player2Display = document.getElementById("player2Display");
 const resultDisplay = document.getElementById("resultDisplay");
@@ -21,28 +21,28 @@ const winningCombo = [
     [2, 4, 6]
 ]
 
-function winCheck(currentPlayer){
-    for(i = 0, i < winningCombo.length, i++){
+function winCheck(currentPlayer) {
+    for (i = 0, i < winningCombo.length, i++) {
         const [a, b, c] = winningCombo[i];
-        if(square[a].textContent === currentPlayer && square[b].textContent === currentPlayer && square[c].textContent === currentPlayer){
+        if (square[a].textContent === currentPlayer && square[b].textContent === currentPlayer && square[c].textContent === currentPlayer) {
             return true
         }
     }
     return false
 }
-function playGame(){
-    
-}
-function pressX(){
-    
-}
+function playGame() {
 
-function pressO(){
+}
+function pressX() {
 
 }
 
-function winnerX(){
-    
+function pressO() {
+
+}
+
+function winnerX() {
+
 }
 
 player1Display.textContent = `Player 1: ${player1Choice}`;
