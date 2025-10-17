@@ -25,10 +25,15 @@ h1 {
 .choices button {
     font-size: 20px;
     min-width: 100px;
-    min-height: 50px;
+    min-height: 100px;
     margin: 0 10px;
     margin-bottom: 1%;
     background-color: rgb(10, 116, 209);
     color: white;
     cursor: pointer;
+}
+
+.btn-row {
+    display: flex;
+    flex-direction: column;
 }
