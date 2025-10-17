@@ -35,10 +35,14 @@ function winCheck(currentPlayer) {
 }
 function playGame(btnPressed) {
     if (winCheck(currentPlayer) === true) {
-
-        let winner = document.createElement('h2')
-        winner.innerText = `${currentPlayer} Wins!`
-        document.getElementsByClassName('roundWinner').appenChild(winner)
+        
+        
+        
+        
+        // let winner = document.getElementById("roundWinner")
+        // winner.innerText = `${currentPlayer} Wins!`
+        // let roundWinner = document.getElementById("roundWinner")
+        // roundWinner.appendChild(winner)
     }
     else if (turn % 2 === 0) {
         pressX(btnPressed);
