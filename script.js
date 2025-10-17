@@ -22,7 +22,7 @@ const winningCombo = [
 ]
 
 function winCheck(currentPlayer){
-    for(i = 0, i < winningCombo.length, i++){
+    for(i = 0; i < winningCombo.length; i++){
         const [a, b, c] = winningCombo[i];
         if(square[a].textContent === currentPlayer && square[b].textContent === currentPlayer && square[c].textContent === currentPlayer){
             return true
@@ -30,8 +30,8 @@ function winCheck(currentPlayer){
     }
     return false
 }
-function playGame(){
-    
+function playGame(btnPressed){
+     btnPressed.innerHTML = "<p>X</p>"
 }
 function pressX(){
     
