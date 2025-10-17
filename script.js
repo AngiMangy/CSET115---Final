@@ -22,46 +22,46 @@ const winningCombo = [
     [2, 4, 6]
 ]
 
-function winCheck(currentPlayer){
-    for(i = 0; i < winningCombo.length; i++){
+function winCheck(currentPlayer) {
+    for (i = 0; i < winningCombo.length; i++) {
         const [a, b, c] = winningCombo[i];
-        if(square[a].textContent === currentPlayer && square[b].textContent === currentPlayer && square[c].textContent === currentPlayer){
+        if (square[a].textContent === currentPlayer && square[b].textContent === currentPlayer && square[c].textContent === currentPlayer) {
             return true
         }
     }
     return false
 }
 
-function playGame(btnPressed){
-     if(turn % 2 === 0){
+function playGame(btnPressed) {
+    if (turn % 2 === 0) {
         pressX(btnPressed);
         console.log("in the if");
         turn++
-     }
-     else if (turn % 2 !== 0){
+    }
+    else if (turn % 2 !== 0) {
         pressO(btnPressed);
         console.log("in the else if");
         turn++;
-     }
-     else if (turn >= 10){
+    }
+    else if (turn >= 10) {
         console.log("_____ wins!");
-     }
+    }
 
 }
-function pressX(btnPressed){
+function pressX(btnPressed) {
     btnPressed.innerHTML = "<p>X</p>"
 }
 
-function pressO(btnPressed){
+function pressO(btnPressed) {
     btnPressed.innerHTML = "<p>O</p>"
 }
 
-function winnerX(){
-    
+function winnerX() {
+
 }
 
-player1Display.textContent = `Player 1: ${player1Choice}`;
-player2Display.textContent = `Player 2: ${player2Choice}`;
+player1Display.textContent = `Player 1: `;
+player2Display.textContent = `Player 2: `;
 resultDisplay.textContent = result;
 
 resultDisplay.classList.remove("greenText", "redText");
