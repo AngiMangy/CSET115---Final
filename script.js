@@ -1,6 +1,7 @@
 let turn = 1
-const choices = ["X", "O",];
-let currentPlayer = player[0]
+const player = ["X", "O",];
+let currentPlayer = player[0,1]
+let square = document.getElementsByClassName("square")
 const player1Display = document.getElementById("player1Display");
 const Player2Display = document.getElementById("player2Display");
 const resultDisplay = document.getElementById("resultDisplay");
@@ -31,40 +32,52 @@ function winCheck(currentPlayer) {
     }
     return false
 }
-
 function playGame(btnPressed) {
     if (turn % 2 === 0) {
         pressX(btnPressed);
         console.log("in the if");
         turn++
         btnPressed.disabled = true
-
+        if (turn >= 10) {
+        console.log("_____ wins!");
+        winCheck(currentPlayer)
+        console.log(winCheck(currentPlayer))
+        }
     }
     else if (turn % 2 !== 0) {
         pressO(btnPressed);
         console.log("in the else if");
         turn++;
         btnPressed.disabled = true
-    }
-    else if (turn >= 10) {
+        if (turn >= 10) {
         console.log("_____ wins!");
-    }
+        winCheck(currentPlayer)
+        console.log(winCheck(currentPlayer))
+        
 
+    }
+    }
+    // else if (turn >= 3) {
+    //     console.log("_____ wins!");
+    // }
+    console.log(winCheck(currentPlayer))
+    winCheck(currentPlayer)
 }
+
 function pressX(btnPressed) {
-    btnPressed.innerHTML = "<p>X</p>"
+    btnPressed.innerText = "X"
 }
 
 function pressO(btnPressed) {
-    btnPressed.innerHTML = "<p>O</p>"
+    btnPressed.innerText = "O"
 }
 
 function winnerX() {
 
 }
 
-player1Display.textContent = `Player 1: `;
-player2Display.textContent = `Player 2: `;
+player1Display.textContent = `Player 1: O`;
+player2Display.textContent = `Player 2: X`;
 resultDisplay.textContent = result;
 
 resultDisplay.classList.remove("greenText", "redText");
