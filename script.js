@@ -41,9 +41,11 @@ function playGame(btnPressed) {
         if (winCheck(currentPlayer) === true) {
             document.getElementById("Xwin").style.display = "block"
             let btns = document.getElementsByClassName("square")
-            for(let btn of btns) {
+            for (let btn of btns) {
                 btn.disabled = true
             }
+            playerXScore++;
+            playerXScoreDisplay.textContent = playerXScore;
         }
         else if (turn === 10) {
             console.log("tied")
@@ -58,15 +60,17 @@ function playGame(btnPressed) {
         if (winCheck(currentPlayer) === true) {
             document.getElementById("Owin").style.display = "block"
             let btns = document.getElementsByClassName("square")
-            for(let btn of btns) {
+            for (let btn of btns) {
                 btn.disabled = true
             }
+            playerOScore++;
+            playerOScoreDisplay.textContent = playerOScore;
         }
         else if (turn === 10) {
             console.log("tied")
             document.getElementById("tied").style.display = "block"
             let btns = document.getElementsByClassName("square")
-            for(let btn of btns) {
+            for (let btn of btns) {
                 btn.disabled = true
             }
         }
@@ -85,29 +89,4 @@ function pressX(btnPressed) {
 function pressO(btnPressed) {
     btnPressed.innerText = "O"
     currentPlayer = player[1]
-}
-
-function update(result) {
-    playerODisplay.textContent = `Player 1: O`;
-    playerXDisplay.textContent = `Player 2: X`;
-
-    resultDisplay.classList.remove("greenText", "redText");
-
-    switch (result) {
-        case "O Win!":
-            resultDisplay.classList.add("greenText");
-            playerOScore++;
-            playerOScoreDisplay.textContent = playerOScore;
-            break;
-        case "X Win!":
-            resultDisplay.classList.add("redText");
-            playerXScore++;
-            playerXScoreDisplay.textContent = playerXScore;
-            break;
-        case "TIE!":
-            tieScore++;
-            tieScoreDisplay.textContent = tieScore;
-            break;
-    }
-    resultDisplay.textContent = result;
 }
