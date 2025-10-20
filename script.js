@@ -1,6 +1,6 @@
 let turn = 1
 const player = ["X", "O",];
-let currentPlayer = player[0, 1]
+let currentPlayer = player[0]
 let square = document.getElementsByClassName("square")
 const player1Display = document.getElementById("player1Display");
 const player2Display = document.getElementById("player2Display");
@@ -34,37 +34,43 @@ function winCheck(currentPlayer) {
     return false
 }
 function playGame(btnPressed) {
-    if (winCheck(currentPlayer) === true) {
-        
-        
-        
-        
-        // let winner = document.getElementById("roundWinner")
-        // winner.innerText = `${currentPlayer} Wins!`
-        // let roundWinner = document.getElementById("roundWinner")
-        // roundWinner.appendChild(winner)
-    }
-    else if (turn % 2 === 0) {
+   if (turn % 2 === 0) {
         pressX(btnPressed);
-        console.log("in the if");
         turn++
         btnPressed.disabled = true
-        if (turn >= 10) {
-            console.log("_____ wins!");
-            winCheck(currentPlayer)
-            console.log(winCheck(currentPlayer))
+        if (winCheck(currentPlayer) === true) 
+        {
+        console.log("in the if statement")
+        document.getElementById("Xwin").style.display = "block"
+    }
+        else if (turn === 10) {
+            // console.log("_____ wins!");
+            // winCheck(currentPlayer)
+            // console.log(winCheck(currentPlayer))
+            console.log("tied")
+            document.getElementById("tied").style.display = "block"
         }
+        // else if (){
+        //     console.log("tied")
+        //     document.getElementById("tied").style.display = "block"
+        //     }
 
     }
     else if (turn % 2 !== 0) {
         pressO(btnPressed);
-        console.log("in the else if");
         turn++;
         btnPressed.disabled = true
-        if (turn >= 10) {
-            console.log("_____ wins!");
-            winCheck(currentPlayer)
-            console.log(winCheck(currentPlayer))
+        if (winCheck(currentPlayer) === true) 
+        {
+        console.log("in the if statement")
+        document.getElementById("Owin").style.display = "block"
+    }
+        else if (turn === 10) {
+            // console.log("_____ wins!");
+            // winCheck(currentPlayer)
+            // console.log(winCheck(currentPlayer))
+            console.log("tied")
+            document.getElementById("tied").style.display = "block"
         }
 
     }
@@ -75,10 +81,12 @@ function playGame(btnPressed) {
 
 function pressX(btnPressed) {
     btnPressed.innerText = "X"
+    currentPlayer = player[0]
 }
 
 function pressO(btnPressed) {
     btnPressed.innerText = "O"
+    currentPlayer = player[1]
 }
 
 
