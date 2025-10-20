@@ -10,49 +10,65 @@
 
 <body>
 
-    <h1>Tic-Tac-Toe</h1>
-    <div id="player1Display">Player 1: X </div>
-    <div id="player2Display">Player 2: O </div>
+    <h1>Tic Tac Toe</h1>
+    <div id="player1Display">Player 1: </div>
+    <div id="player2Display">Player 2: </div>
     <div id="resultDisplay"></div>
 
     <div class="choices">
-        <div class="btn-row">
-            <button class="square" id="btn0" onclick="playGame(this)"></button>
-            <button class="square" id="btn1" onclick="playGame(this)"></button>
-            <button class="square" id="btn2" onclick="playGame(this)"></button>
+        <button class="square" id="btn1" onclick="playGame()"></button>
+        <button class="square" id="btn2" onclick="playGame()"></button>
+        <button class="square" id="btn3" onclick="playGame()"></button>
+        <button class="square" id="btn4" onclick="playGame()"></button>
+        <button class="square" id="btn5" onclick="playGame()"></button>
+        <button class="square" id="btn6" onclick="playGame()"></button>
+        <button class="square" id="btn7" onclick="playGame()"></button>
+        <button class="square" id="btn8" onclick="playGame()"></button>
+        <button class="square" id="btn9" onclick="playGame()"></button>
+
+        <h1>Tic-Tac-Toe</h1>
+        <div id="player1Display">Player 1: X </div>
+        <div id="player2Display">Player 2: O </div>
+        <div id="resultDisplay"></div>
+
+        <div class="choices">
+            <div class="btn-row">
+                <button class="square" id="btn0" onclick="playGame(this)"></button>
+                <button class="square" id="btn1" onclick="playGame(this)"></button>
+                <button class="square" id="btn2" onclick="playGame(this)"></button>
+            </div>
+            <div class="btn-row">
+                <button class="square" id="btn3" onclick="playGame(this)"></button>
+                <button class="square" id="btn4" onclick="playGame(this)"></button>
+                <button class="square" id="btn5" onclick="playGame(this)"></button>
+            </div>
+            <div class="btn-row">
+                <button class="square" id="btn6" onclick="playGame(this)"></button>
+                <button class="square" id="btn7" onclick="playGame(this)"></button>
+                <button class="square" id="btn8" onclick="playGame(this)"></button>
+            </div>
         </div>
-        <div class="btn-row">
-            <button class="square" id="btn3" onclick="playGame(this)"></button>
-            <button class="square" id="btn4" onclick="playGame(this)"></button>
-            <button class="square" id="btn5" onclick="playGame(this)"></button>
+
+        <div class="roundWinner">
+            <h2 id="Owin">O Wins</h2>
+            <h2 id="Xwin">X Wins</h2>
+            <h2 id="tied">Tied</h2>
         </div>
-        <div class="btn-row">
-            <button class="square" id="btn6" onclick="playGame(this)"></button>
-            <button class="square" id="btn7" onclick="playGame(this)"></button>
-            <button class="square" id="btn8" onclick="playGame(this)"></button>
+
+        <div class="scoreDisplay">Player 1 Score:
+            <span id="playerScoreDisplay">0</span>
         </div>
-    </div>
 
-    <div class="roundWinner">
-        <h2 id="Owin">O Wins</h2>
-        <h2 id="Xwin">X Wins</h2>
-        <h2 id="tied">Tied</h2>
-    </div>
+        <div class="scoreDisplay">Player 2 Score:
+            <span id="computerScoreDisplay">0</span>
+        </div>
 
-    <div class="scoreDisplay">Player 1 Score:
-        <span id="playerScoreDisplay">0</span>
-    </div>
-
-    <div class="scoreDisplay">Player 2 Score:
-        <span id="computerScoreDisplay">0</span>
-    </div>
-
-    <div class="scoreDisplay">Tie Score:
-        <span id="tieScoreDisplay">0</span>
-    </div>
+        <div class="scoreDisplay">Tie Score:
+            <span id="tieScoreDisplay">0</span>
+        </div>
 
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

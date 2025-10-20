@@ -34,15 +34,14 @@ function winCheck(currentPlayer) {
     return false
 }
 function playGame(btnPressed) {
-   if (turn % 2 === 0) {
+    if (turn % 2 === 0) {
         pressX(btnPressed);
         turn++
         btnPressed.disabled = true
-        if (winCheck(currentPlayer) === true) 
-        {
-        console.log("in the if statement")
-        document.getElementById("Xwin").style.display = "block"
-    }
+        if (winCheck(currentPlayer) === true) {
+            console.log("in the if statement")
+            document.getElementById("Xwin").style.display = "block"
+        }
         else if (turn === 10) {
             // console.log("_____ wins!");
             // winCheck(currentPlayer)
@@ -60,11 +59,10 @@ function playGame(btnPressed) {
         pressO(btnPressed);
         turn++;
         btnPressed.disabled = true
-        if (winCheck(currentPlayer) === true) 
-        {
-        console.log("in the if statement")
-        document.getElementById("Owin").style.display = "block"
-    }
+        if (winCheck(currentPlayer) === true) {
+            console.log("in the if statement")
+            document.getElementById("Owin").style.display = "block"
+        }
         else if (turn === 10) {
             // console.log("_____ wins!");
             // winCheck(currentPlayer)
