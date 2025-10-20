@@ -2,14 +2,14 @@ let turn = 1
 const player = ["X", "O",];
 let currentPlayer = player[0]
 let square = document.getElementsByClassName("square")
-const player1Display = document.getElementById("player1Display");
-const player2Display = document.getElementById("player2Display");
+const playerODisplay = document.getElementById("playerODisplay");
+const playerXDisplay = document.getElementById("playerXDisplay");
 const resultDisplay = document.getElementById("resultDisplay");
-const player1ScoreDisplay = document.getElementById("player1ScoreDisplay");
-const Player2ScoreDisplay = document.getElementById("Player2ScoreDisplay");
+const playerOScoreDisplay = document.getElementById("playerOScoreDisplay");
+const playerXScoreDisplay = document.getElementById("playerXScoreDisplay");
 const tieScoreDisplay = document.getElementById("tieScoreDisplay");
-let player1Score = 0;
-let Player2Score = 0;
+let playerOScore = 0;
+let playerXScore = 0;
 let tieScore = 0;
 
 const winningCombo = [
@@ -77,25 +77,27 @@ function pressO(btnPressed) {
     currentPlayer = player[1]
 }
 
+function update(result) {
+    playerODisplay.textContent = `Player 1: O`;
+    playerXDisplay.textContent = `Player 2: X`;
 
-player1Display.textContent = `Player 1: O`;
-player2Display.textContent = `Player 2: X`;
+    resultDisplay.classList.remove("greenText", "redText");
 
-resultDisplay.classList.remove("greenText", "redText");
-
-switch (result) {
-    case "You Win!":
-        resultDisplay.classList.add("greenText");
-        playerScore++;
-        playerScoreDisplay.textContent = playerScore;
-        break;
-    case "You Lose!":
-        resultDisplay.classList.add("redText");
-        computerScore++;
-        computerScoreDisplay.textContent = computerScore;
-        break;
-    case "TIE!":
-        tieScore++;
-        tieScoreDisplay.textContent = tieScore;
-        break;
+    switch (result) {
+        case "O Win!":
+            resultDisplay.classList.add("greenText");
+            playerOScore++;
+            playerOScoreDisplay.textContent = playerOScore;
+            break;
+        case "X Win!":
+            resultDisplay.classList.add("redText");
+            playerXScore++;
+            playerXScoreDisplay.textContent = playerXScore;
+            break;
+        case "TIE!":
+            tieScore++;
+            tieScoreDisplay.textContent = tieScore;
+            break;
+    }
+    resultDisplay.textContent = result;
 }
