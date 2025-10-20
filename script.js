@@ -2,14 +2,14 @@ let turn = 1
 const player = ["X", "O",];
 let currentPlayer = player[0]
 let square = document.getElementsByClassName("square")
-const player1Display = document.getElementById("player1Display");
-const player2Display = document.getElementById("player2Display");
+const playerODisplay = document.getElementById("playerODisplay");
+const playerXDisplay = document.getElementById("playerXDisplay");
 const resultDisplay = document.getElementById("resultDisplay");
-const player1ScoreDisplay = document.getElementById("player1ScoreDisplay");
-const Player2ScoreDisplay = document.getElementById("Player2ScoreDisplay");
+const playerOScoreDisplay = document.getElementById("playerOScoreDisplay");
+const playerXScoreDisplay = document.getElementById("playerXScoreDisplay");
 const tieScoreDisplay = document.getElementById("tieScoreDisplay");
-let player1Score = 0;
-let Player2Score = 0;
+let playerOScore = 0;
+let playerXScore = 0;
 let tieScore = 0;
 
 const winningCombo = [
@@ -41,9 +41,11 @@ function playGame(btnPressed) {
         if (winCheck(currentPlayer) === true) {
             document.getElementById("Xwin").style.display = "block"
             let btns = document.getElementsByClassName("square")
-            for(let btn of btns) {
+            for (let btn of btns) {
                 btn.disabled = true
             }
+            playerXScore++;
+            playerXScoreDisplay.textContent = playerXScore;
         }
         else if (turn === 10) {
             console.log("tied")
@@ -58,15 +60,17 @@ function playGame(btnPressed) {
         if (winCheck(currentPlayer) === true) {
             document.getElementById("Owin").style.display = "block"
             let btns = document.getElementsByClassName("square")
-            for(let btn of btns) {
+            for (let btn of btns) {
                 btn.disabled = true
             }
+            playerOScore++;
+            playerOScoreDisplay.textContent = playerOScore;
         }
         else if (turn === 10) {
             console.log("tied")
             document.getElementById("tied").style.display = "block"
             let btns = document.getElementsByClassName("square")
-            for(let btn of btns) {
+            for (let btn of btns) {
                 btn.disabled = true
             }
         }
@@ -85,27 +89,4 @@ function pressX(btnPressed) {
 function pressO(btnPressed) {
     btnPressed.innerText = "O"
     currentPlayer = player[1]
-}
-
-
-player1Display.textContent = `Player 1: O`;
-player2Display.textContent = `Player 2: X`;
-
-resultDisplay.classList.remove("greenText", "redText");
-
-switch (result) {
-    case "You Win!":
-        resultDisplay.classList.add("greenText");
-        playerScore++;
-        playerScoreDisplay.textContent = playerScore;
-        break;
-    case "You Lose!":
-        resultDisplay.classList.add("redText");
-        computerScore++;
-        computerScoreDisplay.textContent = computerScore;
-        break;
-    case "TIE!":
-        tieScore++;
-        tieScoreDisplay.textContent = tieScore;
-        break;
 }
