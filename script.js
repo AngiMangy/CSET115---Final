@@ -39,8 +39,11 @@ function playGame(btnPressed) {
         turn++
         btnPressed.disabled = true
         if (winCheck(currentPlayer) === true) {
-            console.log("in the if statement")
             document.getElementById("Xwin").style.display = "block"
+            let btns = document.getElementsByClassName("square")
+            for(let btn of btns) {
+                btn.disabled = true
+            }
         }
         else if (turn === 10) {
             console.log("tied")
@@ -53,12 +56,19 @@ function playGame(btnPressed) {
         turn++;
         btnPressed.disabled = true
         if (winCheck(currentPlayer) === true) {
-            console.log("in the if statement")
             document.getElementById("Owin").style.display = "block"
+            let btns = document.getElementsByClassName("square")
+            for(let btn of btns) {
+                btn.disabled = true
+            }
         }
         else if (turn === 10) {
             console.log("tied")
             document.getElementById("tied").style.display = "block"
+            let btns = document.getElementsByClassName("square")
+            for(let btn of btns) {
+                btn.disabled = true
+            }
         }
 
     }
