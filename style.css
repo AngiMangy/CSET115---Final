@@ -10,6 +10,7 @@ body {
 
 h1 {
     font-size: 50px;
+
 }
 
 .choices {
@@ -27,7 +28,7 @@ h1 {
     min-height: 100px;
     margin: 0 10px;
     margin-bottom: 1%;
-    background-color: rgb(10, 116, 209);
+    background-color: black;
     color: white;
     cursor: pointer;
 }
@@ -36,6 +37,28 @@ h1 {
     display: flex;
     flex-direction: column;
 }
-#Owin, #Xwin, #tied{
+
+#Owin,
+#Xwin,
+#tied {
     display: none;
+}
+
+.resetBtn {
+    background-color: blueviolet;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+
+}
+
+.scoreDisplay {
+    font-size: 20px;
+}
+
+.roundWinner {
+    font-size: 30px;
+    margin: 0;
 }

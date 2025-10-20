@@ -33,6 +33,7 @@ function winCheck(currentPlayer) {
     }
     return false
 }
+
 function playGame(btnPressed) {
     if (turn % 2 === 0) {
         pressX(btnPressed);
@@ -73,6 +74,8 @@ function playGame(btnPressed) {
             for (let btn of btns) {
                 btn.disabled = true
             }
+            tieScore++;
+            tieScoreDisplay.textContent = tieScore;
         }
 
     }
@@ -89,4 +92,19 @@ function pressX(btnPressed) {
 function pressO(btnPressed) {
     btnPressed.innerText = "O"
     currentPlayer = player[1]
+}
+
+function resetGame() {
+    for (let i = 0; i < square.length; i++) {
+        square[i].textContent = "";
+        square[i].disabled = false;
+    }
+    turn = 1
+    currentPlayer = player[0];
+
+    document.getElementById("Xwin").style.display = "none";
+    document.getElementById("Owin").style.display = "none";
+    document.getElementById("tied").style.display = "none";
+
+    resultDisplay.textContent = "";
 }
