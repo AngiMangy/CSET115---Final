@@ -43,16 +43,9 @@ function playGame(btnPressed) {
             document.getElementById("Xwin").style.display = "block"
         }
         else if (turn === 10) {
-            // console.log("_____ wins!");
-            // winCheck(currentPlayer)
-            // console.log(winCheck(currentPlayer))
             console.log("tied")
             document.getElementById("tied").style.display = "block"
         }
-        // else if (){
-        //     console.log("tied")
-        //     document.getElementById("tied").style.display = "block"
-        //     }
 
     }
     else if (turn % 2 !== 0) {
@@ -64,9 +57,6 @@ function playGame(btnPressed) {
             document.getElementById("Owin").style.display = "block"
         }
         else if (turn === 10) {
-            // console.log("_____ wins!");
-            // winCheck(currentPlayer)
-            // console.log(winCheck(currentPlayer))
             console.log("tied")
             document.getElementById("tied").style.display = "block"
         }
@@ -90,3 +80,22 @@ function pressO(btnPressed) {
 
 player1Display.textContent = `Player 1: O`;
 player2Display.textContent = `Player 2: X`;
+
+resultDisplay.classList.remove("greenText", "redText");
+
+switch (result) {
+    case "You Win!":
+        resultDisplay.classList.add("greenText");
+        playerScore++;
+        playerScoreDisplay.textContent = playerScore;
+        break;
+    case "You Lose!":
+        resultDisplay.classList.add("redText");
+        computerScore++;
+        computerScoreDisplay.textContent = computerScore;
+        break;
+    case "TIE!":
+        tieScore++;
+        tieScoreDisplay.textContent = tieScore;
+        break;
+}
